@@ -1,0 +1,8 @@
+Julia Leandro | RA: 25009148
+
+Fontes usadas para realização do projeto: 
+- Notebooks de atividades práticas anteriores (especificamente o de Dicionários)
+- Notebooks com explicações fornecidas pelo professor Denis 
+- Anotações de aula
+- Documentação de Python
+- Documentação da biblioteca Rich
