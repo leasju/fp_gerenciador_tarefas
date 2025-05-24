@@ -3,14 +3,26 @@
 import task_manager
 from task_manager import select_option
 
-while True:
-    option = int(input("\nGerenciador de Tarefas\n\n"
-                       "1 - Nova tarefa\n"
-                       "2 - Listar tarefas\n"
-                       "3 - Concluir tarefa\n"
-                       "4 - Remover tarefa\n"
-                       "5 - Sair\n\n"
-                       "Opção: "))
-    select_option(option)
+# Uso da função Console() para estilizar a impressão, e função Panel() para exibir o menu dentro de um 'quadro' com borda
+from rich.console import Console
+from rich.panel import Panel
 
+
+console = Console()
+
+menu_options = (
+    "[bold cyan]Gerenciador de Tarefas[/bold cyan]\n\n"
+    "[bold]1[/bold] - Nova tarefa\n"
+    "[bold]2[/bold] - Listar tarefas\n"
+    "[bold]3[/bold] - Concluir tarefa\n"
+    "[bold]4[/bold] - Remover tarefa\n"
+    "[bold]5[/bold] - Sair"
+)
+
+
+while True:
+    # Exibe o menu de opções dentro de um painel com título 'Menu'
+    console.print(Panel(menu_options, title="Menu", expand=False))
+    option = int(input("Opção: "))
+    select_option(option)
 
