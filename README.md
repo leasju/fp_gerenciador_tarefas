@@ -35,8 +35,8 @@ As tarefas são armazenadas em um dicionário Python com as seguintes informaç�
 <p>A interface foi estilizada com a biblioteca <strong>Rich</strong>, permitindo uma exibição visualmente agradável no terminal com quadros, tabelas e ícones:</p>
 
 <p align="left">
-  <img src="img/menu.png" alt="Menu de opções" width="200" style="display:inline-block; margin-right: 10px; vertical-align: top;">
-  <img src="img/tarefas.png" alt="Listagem de tarefas" width="400" style="display:inline-block; vertical-align: top;">
+  <img src="img/menu.png" alt="Menu de opções" width="220" style="display:inline-block; margin-right: 10px; vertical-align: top;">
+  <img src="img/tarefas.png" alt="Listagem de tarefas" width="400" style="margin-top: -8px;">
 </p>
 
 <h2>💡 Tecnologias Utilizadas</h2>
