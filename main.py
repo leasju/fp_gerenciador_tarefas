@@ -13,10 +13,11 @@ console = Console()
 menu_options = (
     "[bold cyan]Gerenciador de Tarefas[/bold cyan]\n\n"
     "[bold]1[/bold] - Nova tarefa\n"
-    "[bold]2[/bold] - Listar tarefas\n"
-    "[bold]3[/bold] - Concluir tarefa\n"
-    "[bold]4[/bold] - Remover tarefa\n"
-    "[bold]5[/bold] - Sair"
+    "[bold]2[/bold] - Listar todas as tarefas\n"
+    "[bold]3[/bold] - Listar tarefas pendentes\n"
+    "[bold]4[/bold] - Concluir tarefa\n"
+    "[bold]5[/bold] - Remover tarefa\n"
+    "[bold]6[/bold] - Sair"
 )
 
 

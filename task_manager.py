@@ -44,6 +44,34 @@ def list_tasks():
     console = Console()
     console.print(table)
 
+ # Listagem de tarefas pendentes
+def list_pend_tasks():
+    # Verifica se há tarefas cadastradas
+    if not tasks:
+        print("Nenhuma tarefa cadastrada.")
+        return
+
+    # Filtra tarefas pendentes
+    pendentes = [(i, title, data) for i, (title, data) in enumerate(tasks.items(), start=1) if not data["Feita"]]
+
+    # Se não houver tarefas pendentes, exibe um aviso
+    if not pendentes:
+        print("Nenhuma tarefa pendente.")
+        return
+
+    # Exibe tabela apenas com tarefas pendentes
+    table = Table(title="Tarefas Pendentes")
+
+    table.add_column("Índice", style="cyan", no_wrap=True)
+    table.add_column("Tarefa", style="yellow")
+    table.add_column("Status", justify="center", style="red")
+
+    for i, title, data in pendentes:
+        table.add_row(str(i), title, "❌")
+
+    console = Console()
+    console.print(table)
+    
 # Conclusão de tarefas
 def mark_complete(task_number):
     # Verifica se há tarefas cadastradas
@@ -84,11 +112,11 @@ def select_option(option):
     # Uso do 'lambda' para adiar a execução da função até a escolha do usuário
     mapa_op = {
         1 : lambda : create_task(tasks, input("Título: "), input("Descrição: ")),
-        2 : list_tasks,
-        3 : lambda : list_tasks,
-        3: check_mark_complete,
-        4: check_remove_task,
-        5 : sys.exit
+        2 : lambda : list_tasks(),
+        3 : lambda : list_pend_tasks(),
+        4 : check_mark_complete,
+        5 : check_remove_task,
+        6 : sys.exit
     }
 
     if option in mapa_op:
@@ -111,7 +139,7 @@ def check_mark_complete():
     if not tasks:
         print("Nenhuma tarefa cadastrada.")
         return
-    list_tasks() # Lista as tarefas existentes antes de solicitar o índice
+    list_pend_tasks() # Lista as tarefas pendentes existentes antes de solicitar o índice
     mark_complete(int(input("Índice da tarefa: ")))
 
 def check_remove_task():
